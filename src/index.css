@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@custom-variant mb (@media (max-width: 426px));
+@custom-variant tb (@media (max-width: 768px));
+@custom-variant lp (@media (max-width: 1024px));
+
+
+@custom-variant onlyTb (@media (min-width: 426px) and (max-width: 768px));
+@custom-variant onlyLp (@media (min-width: 769px) and (max-width: 1024px));
+
+
+.dot-matrix {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}

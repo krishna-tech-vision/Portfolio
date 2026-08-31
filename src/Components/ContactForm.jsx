@@ -1,0 +1,135 @@
+import { useState } from "react";
+
+export default function ContactForm() {
+  // Contact form
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    projectType: { id: "a", name: "fullApplication" },
+    budgetRange: { id: 1, name: "<$50" },
+    message: "",
+  });
+
+  const projectOption = [
+    { id: "a", type: "Full Application" },
+    { id: "b", type: "API Only" },
+    { id: "c", type: "Consulting" },
+  ];
+
+  const budgetOption = [
+    { id: 1, value: "<$50" },
+    { id: 3, value: "$50-$100" },
+    { id: 2, value: "$100-$150" },
+    { id: 4, value: "$200+" },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    alert("You clicked on send button");
+  };
+
+  return (
+    <>
+      <form
+        onSubmit={handleSubmit}
+        className="w-[95%] p-5 lg:p-10 tb:mt-10 bg-gray-900 border-1 border-gray-700 shadow-[0px_0px_10px] shadow-gray-800 rounded-lg"
+      >
+        <div className="flex lp:flex-col gap-5">
+          <label className="text-gray-200 flex flex-col gap-2">
+            Name{" "}
+            <input
+              className="p-3 bg-indigo-50 rounded-md outline-0 border-2 focus:border-blue-500 text-gray-900"
+              type="text"
+              value={form.name}
+              onChange={(e) =>
+                setForm((prev) => ({ ...prev, name: e.target.value }))
+              }
+            />
+          </label>
+          <label className="text-gray-200 flex flex-col gap-2">
+            Email{" "}
+            <input
+              className="p-3 bg-indigo-50 rounded-md outline-0 border-2 focus:border-blue-500 text-gray-900"
+              type="email"
+              value={form.email}
+              onChange={(e) =>
+                setForm((prev) => ({ ...prev, email: e.target.value }))
+              }
+            />
+          </label>
+        </div>
+
+        {/* Project Type */}
+        <div className="mt-5">
+          <h2 className="text-gray-300">Project Type</h2>
+          <div className="flex flex-wrap gap-3 mt-2">
+            {projectOption.map((project) => (
+              <div
+                className={`project-type px-4 py-2 rounded-4xl border-1 border-gray-700 text-gray-300 ${form.projectType.id === project.id ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
+                onClick={() =>
+                  setForm((prev) => ({
+                    ...prev,
+                    projectType: { id: project.id, name: project.type },
+                  }))
+                }
+              >
+                {project.type}
+              </div>
+            ))}
+
+            {/* <div
+              className={`project-type px-4 py-2 rounded-4xl border-1 border-gray-700 text-gray-300 ${projectType === "apiOnly" ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
+              onClick={() => setProjectType("apiOnly")}
+            >
+              API Only
+            </div>
+            <div
+              className={`project-type px-4 py-2 rounded-4xl border-1 border-gray-700 text-gray-300 ${projectType === "consulting" ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
+              onClick={() => setProjectType("consulting")}
+            >
+              Consulting
+            </div> */}
+          </div>
+        </div>
+
+        {/* Budget Range */}
+        <div className="mt-5">
+          <h2 className="text-gray-300">Budget Range</h2>
+          <div className="flex flex-wrap gap-3 mt-3">
+            {budgetOption.map((budget) => (
+              <div
+                className={`project-type w-30 text-center py-1 rounded-md border-1 border-gray-700 text-gray-300 ${form.budgetRange.id === budget.id ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
+                onClick={() =>
+                  setForm((prev) => ({
+                    ...prev,
+                    budgetRange: { id: budget.id, name: budget.value },
+                  }))
+                }
+              >
+                {budget.value}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Message */}
+        <textarea
+          className="bg-indigo-50 mt-8 w-full max-h-30 p-3 rounded-xl outline-0"
+          type="text"
+          value={form.message}
+          onChange={(e) =>
+            setForm((prev) => ({ ...prev, message: e.target.value }))
+          }
+        />
+
+        <button
+          type="submit"
+          className="hover-button bg-indigo-100 w-full py-3 mt-5 rounded-md cursor-pointer"
+        >
+          Send Message{" "}
+        </button>
+      </form>
+    </>
+  );
+}
