@@ -1,6 +1,6 @@
 function SkillSection() {
   return (
-    <section className="w-full flex justify-center mt-15 p-5">
+    <section id="skills" className="w-full flex justify-center mt-15 p-5">
       <div className="w-[95%]">
         <h2 className="text-2xl md:text-3xl font-bold text-indigo-100">
           Technical Arsenal

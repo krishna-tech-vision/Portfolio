@@ -39,7 +39,7 @@ const process = [
 
 function ProcessSection() {
   return (
-    <section className="w-full h-auto md:mt-5">
+    <section id="process" className="w-full h-auto md:mt-5">
       {/* Heading */}
       <div className="w-full px-5 lg:px-10">
         <span className="font-semibold text-green-400">METHODOLOGY</span>

@@ -23,7 +23,10 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative min-h-screen w-full text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden flex flex-col justify-center items-center">
+    <section
+      id="service"
+      className="relative min-h-screen w-full text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden flex flex-col justify-center items-center"
+    >
       <div className="relative max-w-7xl mx-auto w-full">
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">

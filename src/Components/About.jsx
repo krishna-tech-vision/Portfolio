@@ -14,10 +14,13 @@ function AboutSection() {
           database design, and maintainable systems. mail
         </p>
         <div className="flex gap-5 mt-10">
-          <button className="hover-button px-3 py-3 rounded-md bg-indigo-100 flex items-center gap-1 font-bold cursor-pointer text-gray-700">
+          <a
+            href="#contact"
+            className="hover-button px-3 py-3 rounded-md bg-indigo-100 flex items-center gap-1 font-bold cursor-pointer text-gray-700"
+          >
             <span className="material-symbols-outlined">mail</span>
             Let's Talk
-          </button>
+          </a>
           <button className="hover-button2 bg-gray-800 text-gray-300 font-bold px-3 py-3 flex gap-1 rounded-md cursor-pointer">
             <span className="material-symbols-outlined">download</span>
             Resume

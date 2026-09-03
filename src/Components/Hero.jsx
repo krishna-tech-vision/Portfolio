@@ -25,9 +25,12 @@ function Herosection() {
               View Projects
               <span className="material-symbols-outlined">arrow_right_alt</span>
             </button>
-            <button className="hover-button2 bg-gray-800 text-gray-300 font-bold px-3 mb:px-2 py-3 rounded-md ">
+            <a
+              href="#contact"
+              className="hover-button2 bg-gray-800 text-gray-300 font-bold px-3 mb:px-2 py-3 rounded-md "
+            >
               Contact Me
-            </button>
+            </a>
           </div>
         </div>
 

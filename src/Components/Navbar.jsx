@@ -17,16 +17,16 @@ function Navbar() {
           <a className="hover-links" href="#about">
             About
           </a>
-          <a className="hover-links" href="#">
+          <a className="hover-links" href="#skills">
             Skills
           </a>
-          <a className="hover-links" href="#">
+          <a className="hover-links" href="#projects">
             Projects
           </a>
-          <a className="hover-links" href="#">
+          <a className="hover-links" href="#service">
             Service
           </a>
-          <a className="hover-links" href="#">
+          <a className="hover-links" href="#process">
             Process
           </a>
           <a className="hover-links" href="#contact">
@@ -34,12 +34,12 @@ function Navbar() {
           </a>
         </div>
         <div className="px-3 py-2">
-          <button
+          <a
             className="hover-button px-3 py-2 bg-indigo-100 cursor-pointer rounded-md"
-            type="button"
+            href="#contact"
           >
             Hire me
-          </button>
+          </a>
         </div>
       </nav>
     </>
