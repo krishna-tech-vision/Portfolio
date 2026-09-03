@@ -1,6 +1,6 @@
 function AboutSection() {
   return (
-    <div className="flex tb:flex-col mt-10">
+    <div id="about" className="flex tb:flex-col mt-10">
       {/* About */}
       <div className="w-[50%] tb:w-full lg:px-10 px-5">
         <h2 className="text-2xl md:3xl lg:text-5xl text-indigo-100 font-bold">

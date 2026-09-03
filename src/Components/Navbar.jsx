@@ -14,7 +14,7 @@ function Navbar() {
           <a className="text-gray-100 underline underline-offset-4" href="#">
             Home
           </a>
-          <a className="hover-links" href="#">
+          <a className="hover-links" href="#about">
             About
           </a>
           <a className="hover-links" href="#">
