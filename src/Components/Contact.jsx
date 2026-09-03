@@ -45,14 +45,14 @@ function ContactSection() {
           </div>
           <div className="flex gap-5 mt-8">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/krishnananda-munda-0551a240a"
               className="link-button flex gap-1 p-2 rounded-md bg-gray-800 text-gray-300 border-1 border-gray-700"
             >
               <span className="material-symbols-outlined">link</span>LinkedIn
             </a>
 
             <a
-              href="#"
+              href="https://github.com/krishna-tech-vision"
               className="link-button flex gap-1 p-2 rounded-md bg-gray-800 text-gray-300 border-1 border-gray-700"
             >
               <span className="material-symbols-outlined">code</span>GitHup
