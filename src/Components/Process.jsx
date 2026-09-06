@@ -60,7 +60,10 @@ function ProcessSection() {
         <div className="w-[1200px] flex justify-between  mt-2">
           {/* Progess point */}
           {process.map((process, index) => (
-            <div className="progress p-3 flex flex-col items-center">
+            <div
+              key={index}
+              className="progress p-3 flex flex-col items-center"
+            >
               <div
                 className={`progess-point p-4 w-12 h-12 scale-95 flex justify-center items-center rounded-3xl border-2 border-${process.color}`}
               >

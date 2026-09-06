@@ -39,7 +39,7 @@ export default function ContactForm() {
       const client = {
         name: form.name,
         email: form.email,
-        // message: form.message,
+        message: form.message,
         projectType: form.projectType.name,
         budgetRange: form.budgetRange.name,
       };
@@ -52,8 +52,6 @@ export default function ContactForm() {
     }
 
     setError(validate.error);
-
-    // alert("You clicked on send button");
   };
 
   const submitForm = async (client) => {
@@ -69,8 +67,6 @@ export default function ContactForm() {
       const data = await response.json();
 
       setServer(data);
-
-      console.log("data:", data);
     } catch (error) {
       console.error("Error caught:", error.message);
     }

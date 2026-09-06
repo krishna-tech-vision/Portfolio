@@ -130,12 +130,12 @@ function Herosection() {
           </div>
 
           <div className="competence-card px-3 py-1 bg-gray-900 text-gray-300 flex items-center gap-2 border-1 border-gray-800 hover:border-gray-500 rounded-lg">
-            <span class="material-symbols-outlined">lock</span>
+            <span className="material-symbols-outlined">lock</span>
             <span>Secure Auth</span>
           </div>
 
           <div className="competence-card px-3 py-1 bg-gray-900 text-gray-300 flex items-center gap-2 border-1 border-gray-800 hover:border-gray-500 rounded-lg">
-            <span class="material-symbols-outlined">swap_horiz</span>
+            <span className="material-symbols-outlined">swap_horiz</span>
             <span>REST APIs</span>
           </div>
 
