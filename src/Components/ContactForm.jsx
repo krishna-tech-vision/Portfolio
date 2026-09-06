@@ -10,12 +10,14 @@ export default function ContactForm() {
     message: "",
   });
 
+  // Project type
   const projectOption = [
     { id: "a", type: "Full Application" },
     { id: "b", type: "API Only" },
     { id: "c", type: "Consulting" },
   ];
 
+  // Budget range
   const budgetOption = [
     { id: 1, value: "<$50" },
     { id: 3, value: "$50-$100" },
@@ -27,6 +29,20 @@ export default function ContactForm() {
     e.preventDefault();
 
     alert("You clicked on send button");
+  };
+
+  const submitForm = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(),
+      });
+    } catch (error) {
+      console.error("Error caught:", error.message);
+    }
   };
 
   return (
