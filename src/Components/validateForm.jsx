@@ -1,7 +1,6 @@
 const validation = (form) => {
   const { name, email, message } = form;
 
-  console.log(name);
   const error = {};
 
   const nameRegex = /^[a-zA-Z\s\'-]{2,50}$/;

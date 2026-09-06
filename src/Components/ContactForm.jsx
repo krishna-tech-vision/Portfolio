@@ -1,4 +1,5 @@
 import { useState } from "react";
+import validation from "./validateForm";
 
 export default function ContactForm() {
   // Contact form
@@ -25,21 +26,51 @@ export default function ContactForm() {
     { id: 4, value: "$200+" },
   ];
 
+  // Commucate to server
+  const [server, setServer] = useState(null);
+  const [error, setError] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("You clicked on send button");
+    const validate = validation(form);
+
+    if (validate.isValid) {
+      const client = {
+        name: form.name,
+        email: form.email,
+        // message: form.message,
+        projectType: form.projectType.name,
+        budgetRange: form.budgetRange.name,
+      };
+
+      setForm((prev) => ({ ...prev, name: "", email: "", message: "" }));
+      setError(null);
+
+      submitForm(client);
+      return;
+    }
+
+    setError(validate.error);
+
+    // alert("You clicked on send button");
   };
 
-  const submitForm = async () => {
+  const submitForm = async (client) => {
     try {
       const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(),
+        body: JSON.stringify(client),
       });
+
+      const data = await response.json();
+
+      setServer(data);
+
+      console.log("data:", data);
     } catch (error) {
       console.error("Error caught:", error.message);
     }
@@ -62,6 +93,12 @@ export default function ContactForm() {
                 setForm((prev) => ({ ...prev, name: e.target.value }))
               }
             />
+            {/* Error message for name */}
+            {error && (
+              <p style={{ fontSize: "12px", color: "#e4242a" }}>
+                {error.name || ""}
+              </p>
+            )}
           </label>
           <label className="text-gray-200 flex flex-col gap-2">
             Email{" "}
@@ -73,6 +110,12 @@ export default function ContactForm() {
                 setForm((prev) => ({ ...prev, email: e.target.value }))
               }
             />
+            {/* Error message for Email */}
+            {error && (
+              <p style={{ fontSize: "12px", color: "#e4242a" }}>
+                {error.email || ""}
+              </p>
+            )}
           </label>
         </div>
 
@@ -80,8 +123,9 @@ export default function ContactForm() {
         <div className="mt-5">
           <h2 className="text-gray-300">Project Type</h2>
           <div className="flex flex-wrap gap-3 mt-2">
-            {projectOption.map((project) => (
+            {projectOption.map((project, index) => (
               <div
+                key={index}
                 className={`project-type px-4 py-2 rounded-4xl border-1 border-gray-700 text-gray-300 ${form.projectType.id === project.id ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
                 onClick={() =>
                   setForm((prev) => ({
@@ -100,8 +144,9 @@ export default function ContactForm() {
         <div className="mt-5">
           <h2 className="text-gray-300">Budget Range</h2>
           <div className="flex flex-wrap gap-3 mt-3">
-            {budgetOption.map((budget) => (
+            {budgetOption.map((budget, index) => (
               <div
+                key={index}
                 className={`project-type w-30 text-center py-1 rounded-md border-1 border-gray-700 text-gray-300 ${form.budgetRange.id === budget.id ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
                 onClick={() =>
                   setForm((prev) => ({
@@ -125,6 +170,26 @@ export default function ContactForm() {
             setForm((prev) => ({ ...prev, message: e.target.value }))
           }
         />
+
+        {/* Error message for message */}
+        {error && (
+          <p style={{ fontSize: "12px", color: "#e4242a" }}>
+            {error.message || ""}
+          </p>
+        )}
+
+        {/* Server error */}
+        {server && (
+          <p
+            style={{
+              fontSize: "12px",
+              color: server.sucess ? "#00cc18" : "#e4242a",
+              textAlign: "center",
+            }}
+          >
+            {server.error || server.message}
+          </p>
+        )}
 
         <button
           type="submit"
