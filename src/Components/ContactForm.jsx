@@ -77,19 +77,6 @@ export default function ContactForm() {
                 {project.type}
               </div>
             ))}
-
-            {/* <div
-              className={`project-type px-4 py-2 rounded-4xl border-1 border-gray-700 text-gray-300 ${projectType === "apiOnly" ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
-              onClick={() => setProjectType("apiOnly")}
-            >
-              API Only
-            </div>
-            <div
-              className={`project-type px-4 py-2 rounded-4xl border-1 border-gray-700 text-gray-300 ${projectType === "consulting" ? "bg-indigo-100 text-gray-800" : ""} cursor-pointer`}
-              onClick={() => setProjectType("consulting")}
-            >
-              Consulting
-            </div> */}
           </div>
         </div>
 
