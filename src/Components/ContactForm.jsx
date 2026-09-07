@@ -181,6 +181,7 @@ export default function ContactForm() {
               fontSize: "12px",
               color: server.sucess ? "#00cc18" : "#e4242a",
               textAlign: "center",
+              marginTop: "5px",
             }}
           >
             {server.error || server.message}
