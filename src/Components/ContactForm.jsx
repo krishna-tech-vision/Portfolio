@@ -56,13 +56,16 @@ export default function ContactForm() {
 
   const submitForm = async (client) => {
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://portfolio-backend-kcrt.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(client),
         },
-        body: JSON.stringify(client),
-      });
+      );
 
       const data = await response.json();
 
