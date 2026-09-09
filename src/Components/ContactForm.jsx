@@ -57,7 +57,8 @@ export default function ContactForm() {
   const submitForm = async (client) => {
     try {
       const response = await fetch(
-        "https://portfolio-backend-kcrt.onrender.com/api/contact",
+        `https://portfolio-backend-odlc.onrender.com/api/contact`,
+
         {
           method: "POST",
           headers: {
