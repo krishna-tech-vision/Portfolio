@@ -58,7 +58,6 @@ export default function ContactForm() {
     try {
       const response = await fetch(
         `https://portfolio-backend-odlc.onrender.com/api/contact`,
-
         {
           method: "POST",
           headers: {
