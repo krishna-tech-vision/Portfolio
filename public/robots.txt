@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-chi-indol-e2vazkxaa1.vercel.app/sitemap.xml
