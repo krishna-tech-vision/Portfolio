@@ -6,7 +6,7 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    projectType: { id: "a", name: "fullApplication" },
+    projectType: { id: "a", name: "full Application" },
     budgetRange: { id: 1, name: "<$50" },
     message: "",
   });
@@ -182,7 +182,7 @@ export default function ContactForm() {
           <p
             style={{
               fontSize: "12px",
-              color: server.sucess ? "#00cc18" : "#e4242a",
+              color: server.success ? "#00cc18" : "#e4242a",
               textAlign: "center",
               marginTop: "5px",
             }}
