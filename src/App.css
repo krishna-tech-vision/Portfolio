@@ -47,6 +47,11 @@
 
 /* Process componets */
 
+.custom-x-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
 .progress:hover .progess-point {
     scale: calc(1)
 }

@@ -53,29 +53,29 @@ function ProcessSection() {
       </div>
 
       {/* Progess bar */}
-      <div className="w-full flex flex-col items-center px-5 lg:px-10 mt-15 lg:mt-20 overflow-x-auto">
+      <div className="w-full px-10 lg:px-10 mt-15 lg:mt-20 overflow-x-auto custom-x-scrollbar">
         <div className="w-[1200px] h-[1px] bg-gray-500">
           <div className="w-[70%] h-full bg-green-400"></div>
         </div>
-        <div className="w-[1200px] flex justify-between  mt-2">
+        <div className="w-[1200px] flex justify-between mt-2">
           {/* Progess point */}
-          {process.map((process, index) => (
+          {process.map((item, index) => (
             <div
               key={index}
               className="progress p-3 flex flex-col items-center"
             >
               <div
-                className={`progess-point p-4 w-12 h-12 scale-95 flex justify-center items-center rounded-3xl border-2 border-${process.color}`}
+                className={`progess-point p-4 w-12 h-12 scale-95 flex justify-center items-center rounded-3xl border-2 border-${item.color}`}
               >
                 <span
                   style={{ fontSize: "20px" }}
-                  className={`material-symbols-outlined text-${process.color}`}
+                  className={`material-symbols-outlined text-green-300`}
                 >
-                  {process.icon}
+                  {item.icon}
                 </span>
               </div>
-              <h2 className="font-bold text-indigo-100 mt-4">Discover</h2>
-              <span className="text-gray-300 text-sm">Requirements</span>
+              <h2 className="font-bold text-indigo-100 mt-4">{item.title}</h2>
+              <span className="text-gray-300 text-sm">{item.meaning}</span>
             </div>
           ))}
         </div>
